@@ -1,6 +1,0 @@
-learn.bin: 
-	arm-none-eabi-as.exe -mcpu=arm926ej-s -g startup.s -o startup.o
-	arm-none-eabi-gcc.exe -c  -I . -g  -mcpu=arm926ej-s app.c -o app.o
-	arm-none-eabi-gcc.exe -c  -I . -g  -mcpu=arm926ej-s uart.c -o uart.o
-	arm-none-eabi-ld.exe -T linker_script.ld startup.o app.o uart.o -o learn.elf
-	arm-none-eabi-objcopy.exe -O binary learn.elf learn.bin
